@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrintLab IL — 3D Печать в Израиле</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="site-title">PrintLab IL</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" data-i18n="home">Главная</a></li>
+        <li><a href="#services" data-i18n="services">Услуги</a></li>
+        <li><a href="#portfolio" data-i18n="portfolio">Портфолио</a></li>
+        <li><a href="#about" data-i18n="about">О нас</a></li>
+        <li><a href="#contact" data-i18n="contact">Контакты</a></li>
+        <li>
+          <select id="lang-switcher">
+            <option value="ru">🇷🇺 Рус</option>
+            <option value="he">🇮🇱 עברית</option>
+            <option value="en">🇬🇧 Eng</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2 data-i18n="welcome">Добро пожаловать в мир 3D печати</h2>
+      <p data-i18n="intro">
+        Мы предлагаем услуги 3D-печати на заказ и готовы реализовать любую вашу идею.
+      </p>
+      <a href="#contact" class="cta-button" data-i18n="order_now">Заказать сейчас</a>
+    </section>
+
+    <section id="services">
+      <h2 data-i18n="services">Услуги</h2>
+      <ul>
+        <li data-i18n="print_on_demand">Печать по вашему 3D-файлу (STL, OBJ)</li>
+        <li data-i18n="design_service">Моделирование объектов под заказ</li>
+        <li data-i18n="scan_service">Скоро: 3D-сканирование физических объектов</li>
+        <li data-i18n="market_sale">Продажа готовых изделий</li>
+      </ul>
+    </section>
+
+    <section id="portfolio">
+      <h2 data-i18n="portfolio">Портфолио</h2>
+      <p data-i18n="portfolio_text">Скоро здесь появятся фотографии наших работ!</p>
+    </section>
+
+    <section id="about">
+      <h2 data-i18n="about">О нас</h2>
+      <p data-i18n="about_text">
+        PrintLab IL — это домашняя мастерская 3D-печати, где каждый заказ — это проект с душой. Мы работаем с PLA, PETG и TPU.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2 data-i18n="contact">Контакты</h2>
+      <p><strong>Телефон:</strong> +972 55 771 2113</p>
+      <p><strong>Email:</strong> vorokhovsky@gmail.com</p>
+      <p>
+        <a href="https://wa.me/972557712113" target="_blank">WhatsApp</a> |
+        <a href="https://t.me/your_telegram" target="_blank">Telegram</a>
+      </p>
+      <form id="contact-form">
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Ваше сообщение"></textarea>
+        <button type="submit" data-i18n="send">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PrintLab IL</p>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>

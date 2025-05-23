@@ -1,84 +1,126 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrintLab IL — 3D Печать в Израиле</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #000;
+      --background-color: #fff;
+      --accent-color: #007aff;
+      --font-family: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--primary-color);
+      background-color: var(--background-color);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #666;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 4rem;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .contact-buttons a:hover {
+      background: #005fcc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      section h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1 id="site-title">PrintLab IL</h1>
-    <nav>
-      <ul>
-        <li><a href="#home" data-i18n="home">Главная</a></li>
-        <li><a href="#services" data-i18n="services">Услуги</a></li>
-        <li><a href="#portfolio" data-i18n="portfolio">Портфолио</a></li>
-        <li><a href="#about" data-i18n="about">О нас</a></li>
-        <li><a href="#contact" data-i18n="contact">Контакты</a></li>
-        <li>
-          <select id="lang-switcher">
-            <option value="ru">🇷🇺 Рус</option>
-            <option value="he">🇮🇱 עברית</option>
-            <option value="en">🇬🇧 Eng</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
+    <h1>PrintLab IL</h1>
+    <p>3D печать и сканирование на заказ в Израиле</p>
   </header>
-
   <main>
-    <section id="home">
-      <h2 data-i18n="welcome">Добро пожаловать в мир 3D печати</h2>
-      <p data-i18n="intro">
-        Мы предлагаем услуги 3D-печати на заказ и готовы реализовать любую вашу идею.
-      </p>
-      <a href="#contact" class="cta-button" data-i18n="order_now">Заказать сейчас</a>
+    <section>
+      <h2>Услуги</h2>
+      <p>Мы предоставляем услуги 3D-печати на заказ, изготавливаем детали по вашему чертежу или эскизу. В будущем — также 3D-сканирование.</p>
     </section>
-
-    <section id="services">
-      <h2 data-i18n="services">Услуги</h2>
-      <ul>
-        <li data-i18n="print_on_demand">Печать по вашему 3D-файлу (STL, OBJ)</li>
-        <li data-i18n="design_service">Моделирование объектов под заказ</li>
-        <li data-i18n="scan_service">Скоро: 3D-сканирование физических объектов</li>
-        <li data-i18n="market_sale">Продажа готовых изделий</li>
-      </ul>
-    </section>
-
-    <section id="portfolio">
-      <h2 data-i18n="portfolio">Портфолио</h2>
-      <p data-i18n="portfolio_text">Скоро здесь появятся фотографии наших работ!</p>
-    </section>
-
-    <section id="about">
-      <h2 data-i18n="about">О нас</h2>
-      <p data-i18n="about_text">
-        PrintLab IL — это домашняя мастерская 3D-печати, где каждый заказ — это проект с душой. Мы работаем с PLA, PETG и TPU.
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2 data-i18n="contact">Контакты</h2>
-      <p><strong>Телефон:</strong> +972 55 771 2113</p>
-      <p><strong>Email:</strong> vorokhovsky@gmail.com</p>
-      <p>
-        <a href="https://wa.me/972557712113" target="_blank">WhatsApp</a> |
-        <a href="https://t.me/your_telegram" target="_blank">Telegram</a>
-      </p>
-      <form id="contact-form">
-        <input type="text" placeholder="Ваше имя" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Ваше сообщение"></textarea>
-        <button type="submit" data-i18n="send">Отправить</button>
-      </form>
+    <section>
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нами по удобному мессенджеру:</p>
+      <div class="contact-buttons">
+        <a href="https://t.me/yourtelegram" target="_blank">Telegram</a>
+        <a href="https://wa.me/972557712113" target="_blank">WhatsApp</a>
+        <a href="mailto:vorokhovsky@gmail.com">Email</a>
+      </div>
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2025 PrintLab IL</p>
+    &copy; 2025 PrintLab IL. Все права защищены.
   </footer>
-
-  <script src="lang.js"></script>
 </body>
 </html>

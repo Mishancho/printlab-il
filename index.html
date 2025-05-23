@@ -1,100 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PrintLab IL — 3D Печать в Израиле</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>PrintLab IL - שירותי הדפסה תלת מימד בישראל</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #000;
-      --background-color: #fff;
-      --accent-color: #007aff;
-      --font-family: 'Inter', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: var(--font-family);
-      color: var(--primary-color);
-      background-color: var(--background-color);
-      line-height: 1.6;
-      padding: 2rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      color: #666;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    section p {
-      font-size: 1.1rem;
+      font-family: 'Heebo', sans-serif;
+      direction: rtl;
+      background-color: #f9f9f9;
       color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-
+    header {
+      background: linear-gradient(to right, #1d1f21, #34363a);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #f1c40f;
+    }
+    .lang-switcher {
+      display: flex;
+      gap: 1rem;
+    }
+    .lang-switcher button {
+      background: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #111;
+    }
+    section p {
+      font-size: 1.25rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+    .cta {
+      background: linear-gradient(to right, #f1c40f, #f39c12);
+      color: black;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .cta h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    .cta a {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cta a:hover {
+      background-color: #333;
+    }
     footer {
       text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #999;
-      margin-top: 4rem;
+      color: #aaa;
     }
-
-    .contact-buttons a {
-      display: inline-block;
-      margin: 0.5rem 1rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent-color);
-      color: white;
-      border-radius: 6px;
+    .contact-links a {
+      color: #007bff;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
+      margin: 0 0.5rem;
     }
-
-    .contact-buttons a:hover {
-      background: #005fcc;
+    .contact-links a:hover {
+      text-decoration: underline;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
       }
-      section h2 {
-        font-size: 1.4rem;
+      nav {
+        flex-direction: column;
       }
     }
   </style>
@@ -102,25 +140,52 @@
 <body>
   <header>
     <h1>PrintLab IL</h1>
-    <p>3D печать и сканирование на заказ в Израиле</p>
+    <p>מובילים בתחום ההדפסה התלת מימדית בישראל</p>
   </header>
-  <main>
-    <section>
-      <h2>Услуги</h2>
-      <p>Мы предоставляем услуги 3D-печати на заказ, изготавливаем детали по вашему чертежу или эскизу. В будущем — также 3D-сканирование.</p>
-    </section>
-    <section>
-      <h2>Контакты</h2>
-      <p>Свяжитесь с нами по удобному мессенджеру:</p>
-      <div class="contact-buttons">
-        <a href="https://t.me/yourtelegram" target="_blank">Telegram</a>
-        <a href="https://wa.me/972557712113" target="_blank">WhatsApp</a>
-        <a href="mailto:vorokhovsky@gmail.com">Email</a>
-      </div>
-    </section>
-  </main>
+  <nav>
+    <div class="nav-links">
+      <a href="#services">שירותים</a>
+      <a href="#portfolio">גלריה</a>
+      <a href="#about">אודות</a>
+      <a href="#contact">צור קשר</a>
+    </div>
+    <div class="lang-switcher">
+      <button onclick="alert('בקרוב תמיכה בעברית');">עברית</button>
+      <button onclick="alert('English version coming soon');">English</button>
+      <button onclick="alert('Версия на русском скоро');">Русский</button>
+    </div>
+  </nav>
+  <section id="services">
+    <h2>השירותים שלנו</h2>
+    <p>הדפסה תלת מימדית בהתאמה אישית, סריקה תלת מימדית, ייצור אבות טיפוס וחלקים מדויקים לפי דרישה.</p>
+  </section>
+  <section id="portfolio">
+    <h2>גלריית עבודות</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/400x300.png?text=Model+1" alt="Model 1">
+      <img src="https://via.placeholder.com/400x300.png?text=Model+2" alt="Model 2">
+      <img src="https://via.placeholder.com/400x300.png?text=Model+3" alt="Model 3">
+    </div>
+  </section>
+  <section id="about">
+    <h2>מי אנחנו</h2>
+    <p>PrintLab IL הוקמה כדי לספק פתרונות הדפסה תלת מימדית חדשניים ומתקדמים לכל צורך - ממהדורה אחת ועד ייצור סדרתי.</p>
+  </section>
+  <section id="contact">
+    <h2>צור קשר</h2>
+    <p>דברו איתנו בוואטסאפ, טלגרם או בדוא"ל:</p>
+    <div class="contact-links">
+      <a href="https://wa.me/972557712113">וואטסאפ</a>
+      <a href="https://t.me/yourtelegram">טלגרם</a>
+      <a href="mailto:vorokhovsky@gmail.com">דוא"ל</a>
+    </div>
+  </section>
+  <div class="cta">
+    <h2>יש לכם רעיון? אנחנו נדפיס אותו!</h2>
+    <a href="#contact">צור קשר</a>
+  </div>
   <footer>
-    &copy; 2025 PrintLab IL. Все права защищены.
+    &copy; 2025 PrintLab IL - כל הזכויות שמורות
   </footer>
 </body>
 </html>
